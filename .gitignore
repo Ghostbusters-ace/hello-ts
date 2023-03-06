@@ -1,0 +1,5 @@
+#exclude node _modules
+node_modules
+
+# exclude dist
+dist
