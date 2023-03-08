@@ -53,8 +53,35 @@ class Main {
 /**
  * Launch app
  */
-const main = new Main()
+const main = new Main();
 
+/**
+ * Event handling with JS
+ */
 
-    console.log('Keyup was detected')
+const formFields: Map<string, any> = new Map<string, any>([
+    ['lastName', {}],
+    ['email', {}],
+    ['login', {}],
+    ['password', {}]
+]);
+
+(window as any).keyupHandler = (el: any) => {
+    // Assume form is valid
+    let formIsValid: boolean = true
+
+    formFields.forEach((value: any, key: string) => {
+        const field: HTMLInputElement = document.querySelector('input[name="' + key + '"]')
+        if (field.value.trim().length === 0) {
+            formIsValid = false
+            return
+        }
+    })
+
+    // Now change the disabled
+    if (formIsValid) {
+        document.querySelector('#student-form button').removeAttribute('disabled')
+    } else {
+        document.querySelector('#student-form button').setAttribute('disabled', 'disabled')
+    }
 }
