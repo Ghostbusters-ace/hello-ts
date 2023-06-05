@@ -3,3 +3,5 @@ node_modules
 
 # exclude dist
 dist
+
+#Ignore js
