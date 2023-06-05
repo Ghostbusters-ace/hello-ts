@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello TS</title>
+    <link href="./dist/custom.css" rel="stylesheet">
 </head>
 <body>
     <div app></div>
 
         <!-- Student form -->
 
-        <form id="student-form">
+        <form id="student-form" onsubmit="onSubmit(event)">
             <div class="form-field">
                 <input type="text" name="lastName" placeholder="Student name..." onkeyup="keyupHandler(this)">
             </div>
